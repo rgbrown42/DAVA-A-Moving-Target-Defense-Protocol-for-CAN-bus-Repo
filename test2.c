@@ -121,33 +121,14 @@ int main(int argc, char* argv[])
 	ecu1.lower[1] = ecu2.lower[1] =500;
 	srand(time(0));
 
-	//printf("%lu", sizeof(ecu1));
 
-	//double x = (double)clock();
 	unsigned long long x = rdtsc();
-	//printf("%llu\n\n", x);
 	RandomID(ecu1.upper[0], ecu1.lower[0]);
-	//double y = (double)clock();
 	unsigned long long y = rdtsc();
-	//printf("%llu\n\n", y);
 	double z =(double)(((double)y-(double)x)/(double)CLOCKS_PER_SEC);
 	printf("%li\n", CLOCKS_PER_SEC);
 	printf("this is the average time for a random number to be generated and the update phase to be completed %.10lf seconds\n\n", z);
 	
-/*	while(1)
-	{
-		printf("ecu1 is sending a message to ecu2\n");
-		getchar();
-		sendMessage(ecu1.ids[1]);
-		receiveMessage(&ecu1, &ecu2);
-		printf("This is ecu2's new ID 0x%d from ecu2 0x%d from ecu1\n It has been updated in both ecus\n", ecu2.ids[1], ecu1.ids[1]);
-		getchar();
-		printf("ecu2 is sending a message to ecu1\n");
-		getchar();
-		sendMessage(ecu2.ids[0]);
-		receiveMessage(&ecu1, &ecu2);
-		printf("This is ecu1's new ID 0x%d from ecu1 0x%d from ecu2\n It has been updated in both ecus\n", ecu1.ids[0], ecu2.ids[0]);
-	}*/
 	return 0;
 }
 
