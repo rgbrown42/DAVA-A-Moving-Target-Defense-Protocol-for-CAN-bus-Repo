@@ -3,3 +3,4 @@ The source code of "Dynamic Address Validation Array (DAVA): A Moving Target Def
 
 Using test2.c:
 Compile with gcc and run executable to get the average amount of time to generate a random device ID.
+This will generate 2 nodes and send data between them, and the amount of time from sent to new device id is returned.
